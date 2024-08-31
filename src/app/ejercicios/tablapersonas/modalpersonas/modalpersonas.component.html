@@ -1,0 +1,69 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#'+modalid">Editar</button>
+
+<div class="modal fade" id={{modalid}} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Persona</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="divMensaje"></div>
+      <div class="modal-body">
+        <form method="post">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Nombres:</label>
+            <input type="text" name="recipient-name" [(ngModel)]="dataPersona.nombres" class="form-control"
+              id="recipient-name" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-lastname" class="col-form-label">Apellidos</label>
+            <input type="text" name="recipient-lastname" [(ngModel)]="dataPersona.apellidos" class="form-control"
+              id="recipient-lastname" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-birthdate" class="col-form-label">Fecha de nacimiento:</label>
+            <input type="date" name="recipient-birthdate" [(ngModel)]="dataPersona.fecha_nacimiento"
+              class="form-control" id="recipient-birthdate" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-gender" class="col-form-label">G&eacute;nero:</label>
+            <select type="text" name="recipient-gender" [(ngModel)]="dataPersona.genero" class="form-control"
+              id="recipient-gender" required>
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-phone" class="col-form-label">T&eacute;lefono:</label>
+            <input type="text" name="recipient-phone" [(ngModel)]="dataPersona.telefono" class="form-control"
+              id="recipient-phone" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-ciudad" class="col-form-label">Ciudad:</label>
+            <input type="text" name="recipient-ciudad" [(ngModel)]="dataPersona.ciudad" class="form-control"
+              id="recipient-ciudad" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-leveleducation" class="col-form-label">Nivel de estudios:</label>
+            <select type="text" name="recipient-leveleducation" [(ngModel)]="dataPersona.nivel_estudios"
+              class="form-control" id="recipient-leveleducation" required>
+              <option value="Maestría">Maestría</option>
+              <option value="Ingeniería">Ingeniería</option>
+              <option value="Licenciatura">Licenciatura</option>
+              <option value="Doctorado">Doctorado</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <input type="text" class="form-control" id="message-text" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="btnCerrarModal" class="btn btn-secondary" data-bs-dismiss="modal"
+              value="Close">Close</button>
+            <button type="button" class="btn btn-primary" value="Save" (click)="guardar()">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

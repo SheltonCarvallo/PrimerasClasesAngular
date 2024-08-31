@@ -1,0 +1,29 @@
+<form [formGroup]="frmGroupDatosGaranteRx" action="">
+    <div>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="nombreGarante">Nombre del garante</label>
+                    </div>
+                    <div>
+                        <input formControlName="nombreGarante" class="form-control" type="text" name="nombreGarante" id="nombreGarante"
+                            >
+                            <div *ngIf="frmGroupDatosGaranteRx.get('nombreGarante')?.touched && frmGroupDatosGaranteRx.get('nombreGarante')?.errors?.['required']"> ESTE VALOR ES REQUERIDO</div>
+
+        <div *ngIf="frmGroupDatosGaranteRx.get('nombreGarante')?.touched && frmGroupDatosGaranteRx.get('nombreGarante')?.errors?.['minlength']"> LA LONGITUD MINIMA ES DE {{ frmGroupDatosGaranteRx.get('nombre')?.errors?.['minlength']?.requiredLength }}</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                    </div>
+                    <label for="relacionGarante">Relación del garante</label>
+                    <div>
+                        <input formControlName="relacionGarante"  class="form-control" type="text" name="relacionGarante" id="relacionGarante"
+                            placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

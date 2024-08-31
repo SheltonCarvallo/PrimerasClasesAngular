@@ -1,0 +1,64 @@
+<form action="">
+    <div>
+        <div>
+            <div class="row">
+                <div class="col-6">
+                    <div>
+                        <label for="precioUnitario">Precio Unitario</label>
+                    </div>
+                    <div>
+                        <input [(ngModel)]="precioUnitario" class="form-control" type="text" name="precioUnitario"
+                            id="precioUnitario" placeholder="">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div>
+                        <label for="aplicaIva">Aplica IVA</label>
+                    </div>
+                    <div>
+                        <select [(ngModel)]="aplicaIVA"  class="form-select"
+                            aria-label="Default select example" name="aplicaIva" id="aplicaIva">
+                            <option value="">Selecione una opción</option>
+                            <option [value]="'SI'">SI</option>
+                            <option [value]="'NO'">NO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div>
+                        <label for="aplicaDescuento">Aplica Descuento</label>
+                    </div>
+                    <div>
+                        <select [(ngModel)]="aplicaDescuento" class="form-select"
+                            aria-label="Default select example" name="aplicaDescuento" id="aplicaDescuento">
+                            <option value="">Seleccione una opción</option>
+                            <option [value]="'SI'">SI</option>
+                            <option [value]="'NO'">NO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div>
+                        <label for="descuento">Descuento</label>
+                    </div>
+                    <div>
+                        <input [(ngModel)]="descuento" class="form-control" type="text" name="descuento" id="descuento"
+                            placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div>
+                        <label for="pvp">Precio Venta Publico</label>
+                    </div>
+                    <div>
+                        <input [(ngModel)]="pvp" class="form-control" type="text" id="pvp">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

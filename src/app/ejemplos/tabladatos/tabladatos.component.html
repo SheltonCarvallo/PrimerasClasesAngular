@@ -1,0 +1,51 @@
+<div>
+  <select class="form-select">
+    <option *ngFor="let ciudad of lciudades" [value]="ciudad.idciudad">
+      {{ciudad.ciudad}}
+    </option>
+  </select>
+</div>
+
+<br>
+<br>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Names</th>
+        <th scope="col">Age</th>
+        <th scope="col">City</th>
+        <th scope="col">Provincia</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of lusuarios">
+        <th scope="row">{{user.n}}</th>
+        <td>{{user.nombre}}</td>
+        <td>{{user.edad}}</td>
+        <td>{{user.ciudad}}</td>
+        <td [ngSwitch]="user.provinciaid">
+          <ng-template [ngSwitchCase]=1>
+            Guayas
+          </ng-template>
+          <ng-template [ngSwitchCase]=2>
+            Pichincha
+          </ng-template>
+          <ng-template [ngSwitchCase]="3">
+            Manab&iacute;
+          </ng-template>
+          <ng-template [ngSwitchCase]="4">
+            Azuay
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+
+
+</div>

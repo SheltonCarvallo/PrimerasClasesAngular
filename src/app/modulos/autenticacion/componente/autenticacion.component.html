@@ -1,0 +1,14 @@
+<div *ngIf="(pantallaPresentacion === 'Login')">
+    <app-miprimercomponente (banderaAutenticacion)="toggleAutentication($event)" (loginEventChild)="login($event)"></app-miprimercomponente>
+    <!--
+    The expression (banderaAutenticacion)="toggleAutentication($event)" in Angular is an example of event binding, 
+    where the child component (app-miprimercomponente) communicates with its parent component (autenticacion.component.ts) 
+    using the @Output decorator and EventEmitter.
+    -->
+</div>
+<div *ngIf="(pantallaPresentacion !== 'Login')">
+    <app-registrousuario (volverPantallaLogin)="toggleAutentication($event)"></app-registrousuario> 
+</div>
+
+<!--banderdaAutenticacion y volerPantallaLogin son "mensajes (eventos)"
+enviados por miPrimerComponente y registrousuario componentes respectivamenes-->
